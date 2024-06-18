@@ -1,65 +1,48 @@
-const steps = document.querySelectorAll(".step");
-const lines = document.querySelectorAll(".line");
-const prevBtn = document.getElementById("prev");
-const nextBtn = document.getElementById("next");
+const progress = document.getElementById('progress')
+const prev = document.getElementById('prev')
+const next = document.getElementById('next')
+const circles = document.querySelectorAll('.circle')
 
-const goToNext = (num) => {
-  steps[num + 1].classList.add("active");
-  lines[num].classList.add("active");
-  prevBtn.classList.add("active");
-};
+let currentActive = 1
 
-const formatNext = (num) => {
-  if (num == 2) {
-    goToNext(num);
-    nextBtn.classList.remove("active");
-    nextBtn.style.cursor = "not-allowed";
-    prevBtn.classList.add("active");
-    prevBtn.style.cursor = "pointer";
-  } else {
-    goToNext(num);
-    nextBtn.classList.add("active");
-    nextBtn.style.cursor = "pointer";
+next.addEventListener('click', () => {
+  currentActive++
+
+  if (currentActive > circles.length) {
+    currentActive = circles.length
   }
-};
 
-const goToPrev = (num) => {
-  steps[num].classList.remove("active");
-  lines[num - 1].classList.remove("active");
-  nextBtn.classList.add("active");
-};
+  update()
+})
 
-const formatPrev = (num) => {
-  if (num == 1) {
-    goToPrev(num);
-    prevBtn.style.cursor = "not-allowed";
-    prevBtn.classList.remove("active");
-    nextBtn.classList.add("active");
-    nextBtn.style.cursor = "pointer";
-  } else {
-    goToPrev(num);
-    prevBtn.classList.add("active");
-    prevBtn.style.cursor = "pointer";
+prev.addEventListener('click', () => {
+  currentActive--
+
+  if (currentActive < 1) {
+    currentActive = 1
   }
-};
 
-nextBtn.addEventListener("click", () => {
+  update()
+})
 
-  let arr = [];
-  steps.forEach((step) => {
-    arr.push(step.classList.contains("active"));
-  });
-  let arr2 = arr.reverse();
-  let j = 3 - arr2.indexOf(true);
-  formatNext(j);
-});
+function update() {
+  circles.forEach((circle, idx) => {
+    if (idx < currentActive) {
+      circle.classList.add('active')
+    } else {
+      circle.classList.remove('active')
+    }
+  })
 
-prevBtn.addEventListener("click", () => {
-  let arr = [];
-  steps.forEach((step) => {
-    arr.push(step.classList.contains("active"));
-  });
-  let arr2 = arr.reverse();
-  let j = 3 - arr2.indexOf(true);
-  formatPrev(j);
-});
+  const actives = document.querySelectorAll('.active')
+  progress.style.width = ((actives.length-1) / (circles.length-1)) * 100 + '%';
+
+  if (currentActive ===1) {
+    prev.disabled = true
+  } else if (currentActive == circles.length) {
+    next.disabled = true
+  } else {
+    prev.disabled = false
+    next.disabled = false
+  }
+}
