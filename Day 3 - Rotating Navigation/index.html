@@ -3,47 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css">
     <title>Rotating Navigation</title>
 </head>
 <body>
-
-    <div class="info">
-        <div class="image-container">
-            <img id="home" src="images/home.png">
-            <span>HOME</span>
-        </div>
-        <div class="image-container">
-            <img id="about" src="images/about.png">
-            <span>ABOUT</span>
-        </div>
-        <div class="image-container">
-            <img id="contact" src="images/contact.png">
-            <span>CONTACT</span>
-        </div>
-    </div>
-
-    <div class="circle">
-        <img class="menu" id="burger" src="images/menu-burger.png">
-        <img class="menu" id="close" src="images/close.png">
-    </div>
-
     <div class="container">
+        <div class="circle-container">
+            <div class="circle">
+                <button id="close">
+                    <i class="fas fa-times"></i>
+                </button>
+                <button id="open">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
         <div class="content">
-    
             <h1>Amazing Article</h1>
-            <p id="pop">Floring pop</p>
-    
-            
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur sequi cupiditate iure, itaque commodi quas eligendi sed asperiores, enim ut eaque excepturi est facilis repellat recusandae obcaecati inventore nulla exercitationem, maxime ad necessitatibus minus saepe. Totam dolore eligendi provident amet, laborum eaque quo quos quidem minima voluptas beatae, quas sint ipsum sapiente hic possimus delectus temporibus quisquam saepe deserunt alias perspiciatis maiores consequatur impedit. Nostrum, quibusdam. Alias necessitatibus magni quae et ratione sequi, assumenda quia doloremque vel vitae. Officiis, repudiandae. Doloribus aliquid tempore voluptate dolorem illo vero aut corrupti officiis! Fugit similique corporis delectus, nulla nostrum facilis ipsa modi rerum!</p>
-    
-            <h2>My Dog</h2>
-            <img id="dog" src="images/dog.jpg" alt="dog">
-    
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti sint fugit quam modi similique, ipsum, quos eveniet sunt exercitationem praesentium incidunt! Architecto a deserunt praesentium dolore, eligendi voluptate odio ea. Aliquid dignissimos, amet dolores commodi earum explicabo eius consequuntur minima quidem molestiae asperiores itaque id iure ipsam totam eveniet non veritatis praesentium doloribus odit ullam natus unde sit tempora. Cumque repudiandae maxime, provident natus doloremque optio obcaecati, hic deserunt saepe numquam repellendus, illum minima quisquam vel? Sequi illum deleniti ipsum.</p>
+            <small>Florin Pop</small>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, ullam. Quos saepe hic facere nobis omnis recusandae obcaecati voluptates blanditiis, beatae excepturi, fugiat error enim iure quia neque temporibus ipsam quisquam iusto repudiandae. Hic iste corrupti adipisci animi ut repellendus error eveniet deserunt fugiat porro totam iusto, eius esse cum magni necessitatibus dolores. Repellendus placeat reprehenderit praesentium maxime beatae optio fuga impedit, minima velit corporis porro deserunt odit rerum. Eveniet quos atque ea quibusdam repellendus, minima hic impedit sequi porro nulla debitis magnam perspiciatis optio eos. Explicabo repellendus, itaque eaque quasi dignissimos, minima obcaecati ullam repudiandae quis iusto molestias aspernatur.</p>
+
+            <h3>My Dog</h3>
+            <img src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" alt="doggy" />
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque tempora asperiores delectus itaque, ratione deleniti laborum repellendus esse magnam molestias necessitatibus quis ex id et numquam enim illum aut? Nulla, provident atque! Laboriosam sed ipsam odio nostrum debitis? Temporibus, tenetur odit? Earum, impedit! Soluta fugit iste blanditiis eius, amet assumenda eveniet hic delectus esse a. Ad reprehenderit exercitationem similique ducimus veniam obcaecati dolor hic provident labore eaque accusantium molestias impedit qui, expedita, explicabo assumenda veritatis!</p>
         </div>
     </div>
-    
+
+    <nav>
+        <ul>
+            <li><i class="fas fa-home"></i> Home</li>
+            <li><i class="fas fa-user-alt"></i> About</li>
+            <li><i class="fas fa-envelope"></i> Contact</li>
+        </ul>
+    </nav>
+
     <script src="script.js"></script>
 </body>
 </html>
