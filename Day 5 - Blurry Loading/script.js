@@ -1,26 +1,23 @@
-// window.onload = alert('run')
+const loadText = document.querySelector('.loading-text')
+const bg = document.querySelector('.bg')
 
-counter = document.querySelector('.counter')
-body = document.querySelector('body')
+let load = 0
 
-let percent = 0
-let blur = 30
-let opacity = 1
+let int = setInterval(blurring, 30)
 
-let interval = setInterval(update, 30)
+function blurring() {
+    load++
 
-function update() {
-    counter.innerHTML = percent + '%';
-    percent = percent + 1;
-    counter.style.opacity = opacity
-    opacity = opacity - 0.01
-    body.style.backdropFilter = `blur(${blur}px)`
-    blur = blur - 0.3
-
-    if (percent > 100) {
-        clearInterval(interval)
-        counter.style.display = 'none'
+    if (load > 99) {
+        clearInterval(int)
     }
+
+    loadText.innerText = `${load}%`
+    loadText.style.opacity = scale(load, 0, 100, 1, 0)
+    bg.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`
 }
 
+const scale =  (number, inMin, inMax, outMin, outMax) => {
+    return (number - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+}
 
