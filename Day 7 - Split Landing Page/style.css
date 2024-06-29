@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    color: #fff;
+}
+
+.playstation {
+    background: url(images/ps5.webp) rgba(44, 105, 218, 0.7);
+    background-size: cover;
+    flex: 1;
+}
+
+.xbox {
+    background: url(images/xboxss.webp) rgba(5, 3, 15, 0.7);
+    background-size: cover;
+    flex: 1;
+}
+
+div {
+    height: 100%;
+    background-blend-mode: multiply;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: flex 0.8s ease-in-out;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+button {
+    color: inherit;
+    background-color: transparent;
+    border: 2px solid #fff;
+    padding: 15px 40px;
+    margin-bottom: 400px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: background-color 0.4s ease-in-out;
+}
+
+.playstation button:hover {
+    background-color: #0000ff;
+}
+
+.xbox button:hover {
+    background-color: #0a611d;
+}
+
+div:hover {
+    flex: 3;
+}
